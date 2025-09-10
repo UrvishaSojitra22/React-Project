@@ -1,0 +1,53 @@
+body {
+  background: linear-gradient(rgba(226, 164, 175, 0.808), rgba(107, 107, 172, 0.692), rgb(68, 68, 122), pink);
+}
+
+.card-container {
+  background: #e9b5b57c;
+  border-radius: 10%;
+  width: 350px;
+  position: relative;
+  height: 350px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-right: 20px;
+  margin-top: 30px;
+
+}
+
+.card-container:hover {
+  transform: translateY(5px);
+
+}
+.profile-pic img {
+  width: 120px;
+  top: -40px;
+  height: 120px;
+  border-radius: 40%;
+  object-fit: cover;
+  margin-bottom: 30PX;
+  margin-top: 20PX;
+
+}
+
+.name {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 5px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: 600;
+  margin: 10px;
+}
+
+.experience {
+  font-size: 0.9rem;
+  color: #835555;
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 20px;
+}

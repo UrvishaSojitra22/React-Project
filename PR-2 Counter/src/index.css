@@ -1,0 +1,37 @@
+body {
+  display: flex;
+  justify-content: center;
+ 
+}
+h1 {
+  font-size: 40px;
+  color: #6d1c59f5;
+  justify-content: center;
+  display: flex;
+}
+.box{
+    background-color: #a3a5aa;
+    height: 300px;
+    width: 400px;
+    border-color: #333;
+    border-radius: 100px;
+    padding-top: 2px;
+}
+button {
+  background-color: #b664a4;
+  color: rgb(9, 2, 12);
+  padding: 12px 20px;
+  margin: auto;
+  font-size: 20px;
+  border-radius: 20px;
+  display: flex;
+  border-color: rgb(80, 4, 61);
+}
+button:hover {
+  background-color: #8f4f6d;
+}
+/* button:disabled {
+  background-color: #ccc;
+
+} */
+

@@ -1,0 +1,108 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #cfd8d5e0;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin: 30px 0 10px;
+  color: #3e164bbd;
+}
+
+
+form {
+  background: #e9dae475;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 30px 40px;
+  border-radius: 50px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+form table {
+  width: 100%;
+}
+
+
+form input[type="text"],
+form input[type="email"] {
+  width:93%;
+  padding: 15px;
+  border: 1px solid #1916d6;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+form input[type="submit"] {
+  background-color: #a2a6ca;
+  color: rgb(96, 84, 167);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.star-input {
+  display: flex;
+  gap: 8px;
+  font-size: 240px;
+}
+
+.star-input span {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.star-input span:hover {
+  transform: scale(1.2);
+}
+
+/* Cards */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 40px;
+}
+
+.task-card {
+  background-color: rgb(233, 224, 224);
+  width: 280px;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+}
+
+.task-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 60%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid #e6c7c7;
+}
+
+.task-card h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+.task-card p {
+  margin: 6px 0;
+  color: #555;
+}
+
+.task-card .stars {
+  font-size: 20px;
+  margin-top: 5px;
+  color: rgb(38, 0, 255);
+}

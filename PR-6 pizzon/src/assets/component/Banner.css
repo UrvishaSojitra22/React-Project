@@ -1,0 +1,61 @@
+.banner {
+    font-family: "Montserrat", sans-serif;
+     padding: 190px 0px 160px 30px;
+    background-color: #fffaed;
+}
+.container {
+    width: 1520px !important;
+    max-width: 100% !important;
+}
+.out h1 {
+    font-size: 70px;
+    line-height: 74px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #111111;
+}
+.out p {
+    font-size: 24px;
+    color: #777777;
+    line-height: 42px;
+    font-weight: 400;
+    padding-right: 100px;
+    letter-spacing: 1px;
+}
+.banner ul li {
+    font-size: 24px;
+    display: inline-block;
+    padding: 100px 20px;
+    position: relative;
+    color: rgba(255, 0, 0, 0.705);
+    font-weight: 500;
+}
+.banner ul li a {
+    color: #777777;
+    text-decoration: none;
+}
+.banner ul li:last-child::after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 24px;
+    background: #777777;
+    top: 110px;
+    left: -2px;
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+}
+.banner-img .onion-img {
+    position: absolute;
+    right: 35%;
+    top: 36%;
+}
+.banner-img .tometo-img {
+    position: absolute;
+    right: 50px;
+}
+.banner-img .leaf-img {
+    position: absolute;
+    right: 0px;
+    top: 200px;
+}

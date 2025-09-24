@@ -1,0 +1,103 @@
+ body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #c2b2c981;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  background: rgba(161, 120, 120, 0.418);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(236, 31, 31, 0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+input[type="text"],
+select {
+  padding: 8px;
+  border: 1px solid #bd2d2d;
+  border-radius: 6px;
+  background-color: #dac8c8;
+}
+
+.radio-group, .checkbox-group {
+  display: flex;
+  gap: 15px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #e42d829a;
+  color: rgb(17, 10, 10);
+  border: none;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #b300aa8e;
+}
+
+.task-table {
+  margin-top: 40px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: center;
+  padding: 12px;
+  border: 1px solid #cc5656;
+}
+
+th {
+  background-color: #c26363;
+}
+
+img {
+  border-radius: 6px;
+}
+
+.btn {
+  padding: 6px 12px;
+  margin: 0 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-update {
+  background-color: #c9a025;
+  color: black;
+}

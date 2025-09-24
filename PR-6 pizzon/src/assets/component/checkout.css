@@ -1,0 +1,115 @@
+.checkout {
+    padding: 100px 0px 20px 40px;
+}
+
+.product-img img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+.qty-box {
+    margin-top: 40px;
+    padding-left: 20px;
+}
+
+.qty-box .price {
+    font-size: 18px;
+    color: #777777;
+    line-height: 32px;
+    font-weight: 500;
+}
+
+.qty-box .qty {
+    font-size: 18px;
+    color: #777777;
+    line-height: 32px;
+    font-weight: 500;
+}
+
+.checkout-total {
+    margin: 30px 0px;
+    padding: 10px 0px;
+    border-top: 1px solid #e4ded9;
+    border-bottom: 1px solid #e4ded9;
+    color: #9e9c9c;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 500;
+}
+
+.checkout-total li {
+    list-style: none;
+    padding: 6px;
+    margin: 0px;
+}
+
+.checkout-total ul li {
+    display: flex;
+    justify-content: space-between;
+    
+}
+.check-box {
+    padding-top: 40px;
+    color: #b3afaf;
+    font-size: 20px;
+    font-weight: 400;
+    padding-bottom: 40px;
+
+}
+.form-group textarea {
+    height: 120px;
+}
+
+.pay-method h4 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    width: 600;
+    padding-left: 38px;
+}
+
+.pay-method ul li {
+    list-style: none;
+    padding: 5px;
+}
+
+.form-check .form-check-label {
+    font-size: 20px;
+    color: #777777;
+    font-weight: 500;
+    line-height: 22px;
+    padding-left: 2px;
+    padding-top: 2px;
+}
+
+.form-check .form-check-input:checked {
+    background-color: #fbb200;
+    border: 3px solid #fbb200;
+    margin-top: 3px;
+    
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0 rgba(253, 253, 253, 0.25) !important;
+}
+.pay-method .btn-ct{
+    margin-top: 20px;
+}
+.btn-ct{
+    font-weight: 600;
+    border: 2px solid #fbb200;
+    border-radius: 50px;
+    font-size: 20px;
+    padding: 12px 30px;
+    background: #fbb200;
+    color: #ffffff;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.btn-ct:hover{
+    border: none;
+    background-color: #f30639;
+}

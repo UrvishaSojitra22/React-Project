@@ -26,17 +26,14 @@ const MenCardData = () => {
     setFilteredProducts(products);
   }, [products]);
 
-  // 🗑️ Delete Product
   const handleDelete = (id) => {
     dispatch(deleteProduct(id));
   };
 
-  // ✏️ Edit Product
   const handleEdit = (id) => {
     navigate(`/edit-product/${id}`);
   };
 
-  // ✅ Brand Filter
   const handleBrandFilter = (brand) => {
     let updatedBrands = [...selectedBrands];
     if (updatedBrands.includes(brand)) {
@@ -48,7 +45,6 @@ const MenCardData = () => {
     applyFilters(updatedBrands, selectedSizes);
   };
 
-  // ✅ Size Filter
   const handleSizeFilter = (size) => {
     let updatedSizes = [...selectedSizes];
     if (updatedSizes.includes(size)) {
@@ -59,15 +55,12 @@ const MenCardData = () => {
     setSelectedSizes(updatedSizes);
     applyFilters(selectedBrands, updatedSizes);
   };
-
-  // ✅ Apply Filters (supports array brand)
   const applyFilters = (brands, sizes) => {
     let filtered = products;
 
     if (brands.length > 0) {
       filtered = filtered.filter((item) => {
         if (Array.isArray(item.brand)) {
-          // If multiple brands exist, check any match
           return item.brand.some((b) => brands.includes(b));
         } else {
           return brands.includes(item.brand);
@@ -76,27 +69,44 @@ const MenCardData = () => {
     }
 
     if (sizes.length > 0) {
-      filtered = filtered.filter((item) => sizes.includes(item.size));
+      filtered = filtered.filter((item) => {
+        if (Array.isArray(item.size)) {
+          return item.size.some((s) =>
+            sizes.includes(s.trim().toUpperCase())
+          );
+        } else if (typeof item.size === "string") {
+          return sizes.includes(item.size.trim().toUpperCase());
+        }
+        return false;
+      });
     }
 
     setFilteredProducts(filtered);
   };
 
-  // ✅ Collect all unique brands (flatten if array)
+
+  const allSizes = [
+    ...new Set(
+      products.flatMap((p) =>
+        Array.isArray(p.size)
+          ? p.size.map((s) => s.trim().toUpperCase())
+          : [p.size?.trim().toUpperCase()]
+      )
+    ),
+  ].filter(Boolean);
+
   const allBrands = [
     ...new Set(
       products.flatMap((p) =>
         Array.isArray(p.brand) ? p.brand : [p.brand]
       )
     ),
-  ].filter(Boolean); // remove undefined/null
-
-  const allSizes = [...new Set(products.map((p) => p.size))];
+  ].filter(Boolean);
 
   return (
     <Container fluid className="p-4">
       <Row>
-        {/* Sidebar Filter */}
+
         <Col md={3} sm={12} className="border-end p-3">
           <h5 className="mb-3">Filter by Brand</h5>
           {allBrands.length > 0 ? (
@@ -114,7 +124,7 @@ const MenCardData = () => {
           )}
 
           <h5 className="mt-4 mb-3">Filter by Size</h5>
-          {allSizes.length > 0? (
+          {allSizes.length > 0 ? (
             allSizes.map((size, i) => (
               <Form.Check
                 key={i}
@@ -142,7 +152,6 @@ const MenCardData = () => {
           </Button>
         </Col>
 
-        {/* Product Cards */}
         <Col md={9} sm={12}>
           <div className="d-flex flex-wrap gap-4 justify-content-start">
             {filteredProducts.length > 0 ? (

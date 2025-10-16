@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Col, Container, Row, Form, Button } from "react-bootstrap";
 import generateUniqueId from "generate-unique-id";
 import { useNavigate } from "react-router-dom";
-import { addNewProduct } from "../../Services/Action/Action"; // ✅ updated import
+import { addNewProduct } from "../../Services/Action/Action"; 
 
 const AddProduct = () => {
   const dispatch = useDispatch();
@@ -144,7 +144,7 @@ const AddProduct = () => {
         {/* Submit Button */}
         <div className="text-center">
           <Button type="submit" variant="primary">
-            Add Product
+            Add Product 
           </Button>
         </div>
       </Form>

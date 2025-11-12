@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": "24165",
+      "productName": "er3qds",
+      "price": "32",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq4y3aV7DJABdQtTnxwG_r0S9k1zoF8DG9BmCCkAAOdCoTZhIE210IXVo&s",
+      "color": "fgbf",
+      "brand": "Arrow Sport",
+      "size": "M"
+    },
+    {
+      "id": "14127",
+      "productName": "kjkwhs",
+      "price": "435345",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq4y3aV7DJABdQtTnxwG_r0S9k1zoF8DG9BmCCkAAOdCoTZhIE210IXVo&s",
+      "color": "green",
+      "brand": "Arrow",
+      "size": "L"
+    }
+  ]
+}

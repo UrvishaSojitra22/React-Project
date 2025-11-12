@@ -1,0 +1,56 @@
+.hero-banner-container {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+  text-align: center;
+}
+
+.hero-banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-brand-strip {
+  background: linear-gradient(to bottom, #e9e9e9, #f9f9f9);
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-brand-logo {
+  height: 40px;
+  object-fit: contain;
+}
+
+.hero-bottom-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+
+.hero-offer-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #000;
+}
+
+.hero-shop-btn {
+  background: #fff;
+  border: 2px solid #000;
+  padding: 10px 25px;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.hero-shop-btn:hover {
+  background: #000;
+  color: #fff;
+}

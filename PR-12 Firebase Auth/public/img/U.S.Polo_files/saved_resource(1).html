@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!-- saved from url=(0012)about:srcdoc -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <style>
+      html {
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        pointer-events: auto;
+      }
+
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        pointer-events: inherit;
+      }
+
+      .embed-container iframe,
+      .embed-container object,
+      .embed-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        pointer-events: inherit;
+      }
+    </style>
+    <title>Youtube Player</title>
+  </head>
+
+  <body>
+    <div class="embed-container">
+      <iframe id="Youtube_xUHW5Bm21s" frameborder="0" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" title="Megamart - Brotherhood " width="687" height="450" src="https://www.youtube-nocookie.com/embed/?autoplay=1&amp;mute=1&amp;cc_lang_pref=en&amp;cc_load_policy=0&amp;color=white&amp;controls=1&amp;disablekb=0&amp;enablejsapi=1&amp;fs=0&amp;hl=en&amp;iv_load_policy=1&amp;loop=1&amp;modestbranding=1&amp;origin=https%3A%2F%2Fwww.megamartfashions.com&amp;widget_referrer=https%3A%2F%2Fwww.megamartfashions.com&amp;playsinline=1&amp;rel=1&amp;widgetid=1&amp;forigin=about%3Asrcdoc&amp;aoriginsup=1&amp;aorigins=https%3A%2F%2Fwww.megamartfashions.com&amp;vf=5"></iframe>
+    </div>
+
+    <script type="text/javascript" id="www-widgetapi-script" src="https://www.youtube.com/s/player/7f3b257d/www-widgetapi.vflset/www-widgetapi.js" async=""></script><script src="https://www.youtube.com/iframe_api"></script><script>
+      var tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName("script")[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var platform = "web";
+      var host = "https://www.youtube-nocookie.com";
+      var player;
+      var timerId;
+
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player("Youtube_xUHW5Bm21s", {
+          host: host,
+          playerVars: {"autoplay":1,"mute":1,"cc_lang_pref":"en","cc_load_policy":0,"color":"white","controls":1,"disablekb":0,"enablejsapi":1,"fs":0,"hl":"en","iv_load_policy":1,"loop":1,"modestbranding":"1","origin":"https://www.megamartfashions.com","widget_referrer":"https://www.megamartfashions.com","playsinline":1,"rel":1},
+          events: {
+            onReady: function (event) {
+              handleFullScreenForMobilePlatform();
+              sendMessage('Ready', event);
+            },
+            onStateChange: function (event) {
+              clearTimeout(timerId);
+              sendMessage('StateChange', event.data);
+              if (event.data == 1) {
+                timerId = setInterval(function () {
+                  var state = {
+                    'currentTime': player.getCurrentTime(),
+                    'loadedFraction': player.getVideoLoadedFraction()
+                  };
+
+                  sendMessage('VideoState', JSON.stringify(state));
+                }, 100);
+              }
+            },
+            onPlaybackQualityChange: function (event) {
+              sendMessage('PlaybackQualityChange', event.data);
+            },
+            onPlaybackRateChange: function (event) {
+              sendMessage('PlaybackRateChange', event.data);
+            },
+            onApiChange: function (event) {
+              sendMessage('ApiChange', event.data);
+            },
+            onError: function (event) {
+              sendMessage('PlayerError', event.data);
+            },
+            onAutoplayBlocked: function (event) {
+              sendMessage('AutoplayBlocked', event.data);
+            },
+          },
+        });
+        player.setSize(window.innerWidth, window.innerHeight);
+      }
+
+      window.addEventListener('message', (event) => {
+        try {
+          var data = JSON.parse(event.data);
+
+          if(data.function){
+            var rawFunction = data.function.replaceAll('<<quote>>', '"');
+            var result = eval(rawFunction);
+
+            if(data.key) {
+              var message = {}
+              message[data.key] = result
+              var messageString = JSON.stringify(message);
+
+              event.source.postMessage(messageString , '*');
+            }
+          }
+        } catch (e) { }
+      }, false);
+
+      window.onresize = function () {
+        player.setSize(window.innerWidth, window.innerHeight);
+      };
+
+      function sendPlatformMessage(message) {
+        switch(platform) {
+           case 'android':
+             Youtube_xUHW5Bm21s.postMessage(message);
+             break;
+           case 'ios':
+             Youtube_xUHW5Bm21s.postMessage(message, '*');
+             break;
+           case 'web':
+             window.parent.postMessage(message, '*');
+             break;
+         }
+      }
+
+      function sendMessage(key, data) {
+         var message = {};
+         message[key] = data;
+         message['playerId'] = 'Youtube_xUHW5Bm21s';
+         var messageString = JSON.stringify(message);
+
+         sendPlatformMessage(messageString);
+      }
+
+      function getVideoData() {
+        return prepareDataForPlatform(player.getVideoData());
+      }
+
+      function getPlaylist() {
+        return prepareDataForPlatform(player.getPlaylist());
+      }
+
+      function getAvailablePlaybackRates(){
+        return prepareDataForPlatform(player.getAvailablePlaybackRates());
+      }
+
+      function prepareDataForPlatform(data) {
+        if(platform == 'android') return data;
+
+        return JSON.stringify(data);
+      }
+
+      function handleFullScreenForMobilePlatform() {
+        if(platform != 'web') {
+          var ytFrame = document.getElementsByTagName('iframe')[0].contentWindow.document;
+          var fsButton = ytFrame.getElementsByClassName('ytp-fullscreen-button ytp-button')[0];
+
+          if(fsButton != null) {
+            var fsButtonCopy = fsButton.cloneNode(true);
+            fsButton.replaceWith(fsButtonCopy);
+            fsButtonCopy.onclick = function() {
+              sendMessage('FullscreenButtonPressed', '');
+            };
+          }
+        }
+      }
+    </script>
+  
+
+</body></html>

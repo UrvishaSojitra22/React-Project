@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": "24165",
+      "productName": "er3qds",
+      "price": "32",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq4y3aV7DJABdQtTnxwG_r0S9k1zoF8DG9BmCCkAAOdCoTZhIE210IXVo&s",
+      "color": "fgbf",
+      "brand": "Arrow Sport",
+      "size": "M",
+      "category": "clothing"
+    },
+    {
+      "id": "14127",
+      "productName": "kjkwhs",
+      "price": "435345",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq4y3aV7DJABdQtTnxwG_r0S9k1zoF8DG9BmCCkAAOdCoTZhIE210IXVo&s",
+      "color": "green",
+      "brand": "Arrow",
+      "size": "L",
+      "category": "electronics"
+    },
+    {
+      "id": "58123",
+      "productName": "Glow Drops",
+      "price": "1299",
+      "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=640&q=60",
+      "color": "Rose",
+      "brand": "Care&Glow",
+      "size": "30ml",
+      "category": "beauty"
+    }
+  ]
+}

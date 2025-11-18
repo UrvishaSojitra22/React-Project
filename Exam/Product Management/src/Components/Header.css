@@ -1,0 +1,20 @@
+.fk-nav-bar::-webkit-scrollbar {
+  height: 4px;
+}
+
+.fk-nav-bar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.fk-nav-bar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+}
+
+.fk-nav-item a {
+  color: inherit;
+}
+
+.fk-nav-item:hover a {
+  color: #fff;
+}
